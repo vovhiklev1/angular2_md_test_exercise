@@ -1,7 +1,20 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
+import { ROUTER_DIRECTIVES } from '@angular/router';
+//import {provideRouter, ROUTER_DIRECTIVES, RouterConfig } from '@angular/router';
+//import {provideRouter, RouterConfig}  from '@angular/router';
+
+import {GeneralInfoComponent} from "./general-info/general-info.component"
+//import {CorrectiveActionsComponent} from "./corrective-actions/corrective-actions.component"
+//import {SubmitComponent} from "./submit/submit.component"
 
 @Component({
     selector: 'my-app',
-    template: '<h1>My First Angular 2 App</h1>'
+    templateUrl: './app/app.component.html',
+    // styleUrls: ['src/css/app.css'],
+     directives: [ROUTER_DIRECTIVES]
+   // providers: [provideRouter]
 })
-export class AppComponent { }
+
+export class AppComponent {
+    public
+}

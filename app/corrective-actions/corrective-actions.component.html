@@ -1,0 +1,99 @@
+<div class="row">
+    <div class="col-sm-12">
+        <div class="header-message">
+            <div class="header-message__icon">
+                <span class="glyphicon--inverse glyphicon glyphicon-alert"></span>
+            </div>
+            <div class="header-message__text">
+                <p class="header__text">Please complete the table below</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-sm-12">
+        <div class="panel panel-default">
+
+            <table class="table table-hover">
+                <thead class="table__header">
+                <tr>
+                    <th>Description of Corrective Action*</th>
+                    <th>Action Taken By (name)*</th>
+                    <th>Company*</th>
+                    <th>Date*</th>
+                    <th></th>
+                </tr>
+                </thead>
+                <tbody>
+               <tr >
+                    <td>#</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                </tbody>
+            </table>
+
+            <div class="panel-body">
+                <button type="button" class="btn btn-primary btn-add pull-right " data-toggle="modal" ng-click="addRow()"  data-target="#actionFormModal" data-whatever=""><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add new
+                </button>
+
+
+            </div>
+            <div class="panel-footer text-center panel-footer--alert ">
+                Table limit - 5 records!
+            </div>
+        </div>
+    </div>
+
+
+    <div class="modal fade" modal-directive="" id="actionFormModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                    <h4 class="modal-title" id="exampleModalLabel">Add new Corrective Action</h4>
+                </div>
+                <div class="modal-body">
+                    <form name="modalForm" >
+                        <div class="form-group">
+                            <label for="description-text" class="control-label">Description of Corrective
+                                Action *:</label>
+                            <textarea  class="form-control " id="description-text" ></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="action-name" class="control-label">Action
+                                Taken By (name) *:</label>
+                            <input  type="text" class="form-control " name="actionName" id="action-name" >
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-5 control-label" for="company-name">Company *:</label>
+                            <select class="form-control " id="company-name" ng-model="modalActionCompany" required=""><option value="? undefined:undefined ?"></option>
+                                <option disabled="" selected="" value=" -- select --"> -- select --</option>
+                                <!-- ngRepeat: item in company track by $index -->
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label" for="action-date">Date *:</label>
+                            <input type="date" class="form-control ng-pristine ng-untouched ng-invalid ng-invalid-required" id="action-date" name="input" ng-model="modalActionDate" required=""> <!--min="01-01-2015" max="12-31-2017"-->
+                        </div>
+
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close
+                    </button>
+                    <button ng-click="close()" ng-model="addEditMode" ng-show="!EditMode" type="button" class="btn btn-primary ng-pristine ng-untouched ng-valid" ng-disabled="!modalForm.$valid" disabled="disabled"> <!--data-dismiss="modal" -->
+                        <span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Add
+                    </button>
+                    <button ng-click="edit()" type="button" ng-model="addEditMode" ng-show="EditMode" class="btn btn-primary ng-pristine ng-untouched ng-valid ng-hide" ng-disabled="!modalForm.$valid" disabled="disabled"> <!--data-dismiss="modal" -->
+                        <span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Apply
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

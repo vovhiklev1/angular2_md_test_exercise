@@ -1,0 +1,19 @@
+<div class="container">
+    <div class="row">
+        <ul class="nav nav-tabs">
+            <li role="presentation" class="active">
+                <a [routerLink]="['/generalInfo']" routerLinkActive="active">General Information</a></li>
+            <li role="presentation">
+                <a [routerLink]="['/correctiveActions']" routerLinkActive="active">Corrective Actions</a></li>
+            <li role="presentation">
+                <a [routerLink]="['/generalInfo']" routerLinkActive="active">REVIEW and SUBMIT</a></li>
+        </ul>
+    </div>
+    <div class="row">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <router-outlet></router-outlet>
+            </div>
+        </div>
+    </div>
+</div>

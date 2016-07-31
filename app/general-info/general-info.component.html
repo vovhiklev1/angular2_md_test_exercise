@@ -1,0 +1,134 @@
+<p>Please complete the form below based on available information. Click an applicable tab above to enter additional
+    information related to the incident.
+    When complete click 'REVIEW and SUBMIT' tab above.</p>
+
+<!--
+[ngFormModel]="myForm"
+      (ngSubmit)="onAddContact(myForm.value)"-->
+<form [ngFormModel]="myForm" (ngSubmit)="onAddContact(myForm.value)" novalidate
+      class="form-horizontal" role="form">
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="form-group form-group-sm">
+                <label>*Date and Time of Incident::</label>
+                <!--[ngFormControl] = "myForm.controls['dateTimeIncident']"
+                #dateTimeIncident="ngForm"-->
+                <input type="datetime-local" class="form-control"
+                       placeholder="First Name"
+                       [ngFormControl] = "myForm.controls['dateTimeIncident']"
+                       #dateTimeIncident="ngForm"/>
+            </div>
+
+            <div class="form-group form-group-sm">
+                <label>*Reported by:</label>  <!--[(ngModel)]="generalInfoData.reportedBy"-->
+                <input type="text" class="form-control"
+                       [ngFormControl] ="myForm.controls['reportedBy']"
+                       #reportedBy="ngForm"/>
+            </div>
+            <div class="form-group form-group-sm">
+                <label>*Company of Reporter:</label>
+              <!--  [(ngModel)]="generalInfoData.company"-->
+                <input type="text" class="form-control"
+                       [ngFormControl] ="myForm.controls['company']"
+                       #company="ngForm"/>
+            </div>
+            <div class="form-group form-group-sm">
+                <label>*Contact Number:</label>
+                <input type="text" class="form-control">
+            </div>
+            <div class="form-group form-group-sm">
+                <label>*Supervisor Name:</label>
+                <input type="text" class="form-control">
+            </div>
+            <div class="form-group form-group-sm">
+                <label>*High Level Description of Incident:</label>
+                <textarea class="form-control" name="description" rows="5"></textarea>
+            </div>
+        </div>
+
+        <div class="col-sm-6">
+            <p>Well Information</p>
+            <div class="form-group form-group-sm">
+                <label class=" control-label" for="WellNumber"><span>*</span>Well Number:</label>
+
+                <div class="">
+                    <select class="form-control" name="wellNumber" id="WellNumber">
+                        <option label="Well-01" value="string:Well-01">Well-01</option>
+                        <option label="Well-02" value="string:Well-02">Well-02</option>
+                        <option label="Well-03" value="string:Well-03">Well-03</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group form-group-sm">
+                <label class=" control-label" for="Region"><span>*</span>Region:</label>
+
+                <div class="">
+                    <input class="form-control" type="text" id="Region">
+                </div>
+            </div>
+            <div class="form-group form-group-sm">
+                <label class=" control-label" for="State"><span>*</span>State:</label>
+
+                <div class="">
+                    <input class="form-control" type="text" id="State">
+                </div>
+            </div>
+            <div class="form-group form-group-sm">
+                <label class=" control-label" for="FieldOffice"><span>*</span>Field Office:</label>
+
+                <div class="">
+                    <input class="form-control" type="text" id="FieldOffice">
+                </div>
+            </div>
+            <div class="form-group form-group-sm">
+                <label class=" control-label"><span>*</span>Incident Severity (Check
+                    All that Apply):</label>
+
+                <div class="">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <div class="checkbox">
+                                <label><input type="checkbox">Loss of well controll</label>
+                            </div>
+                            <div class="checkbox">
+                                <label><input type="checkbox">Fatality(ies)</label>
+                            </div>
+                            <div class="checkbox ">
+                                <label><input type="checkbox">Hospitalisation or
+                                    medical threatment</label>
+                            </div>
+                            <div class="checkbox ">
+                                <label><input type="checkbox">Spill offsite &gt; 50Bbls</label>
+                            </div>
+                            <div class="checkbox ">
+                                <label><input type="checkbox">Spill to water, any
+                                    amount</label>
+                            </div>
+                            <div class="checkbox ">
+                                <label><input type="checkbox">Property
+                                    damage</label>
+                            </div>
+                        </div>
+                        <div class=" panel-footer">
+                            <div class="checkbox">
+                                <label><input type="checkbox">None Apply</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button type="submit" [disabled]="!myForm.valid">Save Contact</button>
+       <!-- <td>First Name</td>
+        <td> {{reportedby.touched}}</td>
+        touched
+        <td>{{reportedby.pristine}}</td>
+        pristine
+        <td>{{reportedby.valid}}</td>
+        valid-->
+    </div>
+</form>
+
+
+
+
