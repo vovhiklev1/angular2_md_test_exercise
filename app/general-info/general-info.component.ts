@@ -33,9 +33,9 @@ export class GeneralInfoComponent {
         })
     }
 
-    onAddContact(value) {
+    onAddContact() {
         console.log("Submitted value");
-        console.log(value);
+        console.log();
         if (this.myForm.dirty && this.myForm.valid) {
 
         }

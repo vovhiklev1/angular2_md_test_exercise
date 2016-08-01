@@ -16,5 +16,5 @@ import {GeneralInfoComponent} from "./general-info/general-info.component"
 })
 
 export class AppComponent {
-    public
+
 }

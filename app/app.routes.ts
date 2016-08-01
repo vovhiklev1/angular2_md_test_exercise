@@ -1,6 +1,7 @@
 import {provideRouter, RouterConfig}  from '@angular/router';
 import {GeneralInfoComponent} from './general-info/general-info.component';
 import {CorrectiveActionsComponent} from './corrective-actions/corrective-actions.component';
+import {SubmitComponent} from './submit/submit.component';
 
 const routes:RouterConfig = [
     {
@@ -9,7 +10,11 @@ const routes:RouterConfig = [
     }
     , {
         path: 'correctiveActions',
-        component: CorrectiveActionsComponent}
+        component: CorrectiveActionsComponent
+    }, {
+        path: 'submit',
+        component: SubmitComponent
+    }
 ];
 
 
